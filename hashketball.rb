@@ -226,7 +226,7 @@ def player_most(statistic)
   
   # Run expressions for Home and Away teams
   game_hash.each { |location, team_data|
-    
+    binding.pry
     # collect hashes of players on each team with largest shoe
     max_per_team[i] = team_data[:players].max { |a, b| a[statistic] <=> b[statistic] }
     i += 1

@@ -221,7 +221,6 @@ def big_shoe_rebounds
     
     # collect hashes of players on each team with largest shoe
     max_shoe_per_team[i] = team_data[:players].max { |a, b|
-      binding.pry
       a[:shoe] <=> b[:shoe]
     }
     i += 1

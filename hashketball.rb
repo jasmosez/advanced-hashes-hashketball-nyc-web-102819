@@ -238,6 +238,18 @@ def most_points_scored
 end
 
 def winning_team
+  # new hash where team name => total points
+  
+
+  # Run expressions for Home and Away teams
+  game_hash.reduce({}) { |scores, (location, team_data)|
+    scores[team_data[:team_name]] = team_data[:players].
+    max_per_team[i] = team_data[:players].max { |a, b| a[statistic] <=> b[statistic] }
+    i += 1
+  }
+  player = max_per_team.max { |a, b| a[statistic] <=> b[statistic] }
+  
+  winners
 end
 
 def player_with_longest_name

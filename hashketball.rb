@@ -218,7 +218,7 @@ end
 ## BONUS SECTION
 
 def player_most(statistic)
-  # return the number of rebounds associated with the player that has the largest shoe size.
+  # return the the player that has the most of the statistic parameter.
   
   player = {}
   max_per_team = []
@@ -226,7 +226,6 @@ def player_most(statistic)
   
   # Run expressions for Home and Away teams
   game_hash.each { |location, team_data|
-    binding.pry
     # collect hashes of players on each team with largest shoe
     max_per_team[i] = team_data[:players].max { |a, b| a[statistic] <=> b[statistic] }
     i += 1
@@ -242,7 +241,8 @@ def winning_team
 end
 
 def player_with_longest_name
-  binding.pry
+  
+  
   player_most(:player_name)[:player_name]
 end
 

@@ -231,7 +231,7 @@ def player_most(stat)
     max_per_team[i] = team_data[:players].max { |a, b| a[stat] <=> b[stat] }
     i += 1
   }
-  
+  binding.pry
   player = max_per_team.max { |a, b| a[stat] <=> b[stat] }
 end
 

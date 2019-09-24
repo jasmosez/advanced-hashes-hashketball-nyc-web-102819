@@ -247,7 +247,6 @@ def player_most(stat)
   }
   
   player = max_shoe_per_team.max { |a, b| a[stat] <=> b[stat] }
-  player[:rebounds]
 end
 
 def most_points_scored

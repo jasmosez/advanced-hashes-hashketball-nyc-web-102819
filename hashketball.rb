@@ -236,12 +236,14 @@ def player_most(stat)
 end
 
 def most_points_scored
+  player_most(:points)
 end
 
 def winning_team
 end
 
 def player_with_longest_name
+  player_most(:player_name.length)
 end
 
 def long_name_steals_a_ton?

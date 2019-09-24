@@ -243,7 +243,7 @@ def winning_team
 end
 
 def player_with_longest_name
-  player_most(:player_name.length)
+  player_most(:player_name.length)[:player_name]
 end
 
 def long_name_steals_a_ton?

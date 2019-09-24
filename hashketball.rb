@@ -236,7 +236,7 @@ def player_most(stat)
 end
 
 def most_points_scored
-  player_most(:points)
+  player_most(:points)[:player_name]
 end
 
 def winning_team

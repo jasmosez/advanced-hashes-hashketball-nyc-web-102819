@@ -218,7 +218,8 @@ def big_shoe_rebounds
   
   # Run expressions for Home and Away teams
   game_hash.each do |location, team_data|
-    # set variable to player largest shoe size. If none, it returns nil
+    
+    # collect hashes of players on each team with largest shoe
     max_shoe_per_team[i] = team_data[:players].max { |a, b|
       binding.pry
       a[:shoe] <=> b[:shoe]

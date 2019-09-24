@@ -225,7 +225,9 @@ def big_shoe_rebounds
     }
     i += 1
   end
-  player = max_shoe_per_team[:players][:shoe].max
+  player = max_shoe_per_team.max { |a, b|
+      a[:shoe] <=> b[:shoe]
+    }
   player[:rebounds]
 end
 

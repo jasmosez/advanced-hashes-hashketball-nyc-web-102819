@@ -243,7 +243,7 @@ def winning_team
 
   # Run expressions for Home and Away teams
   game_hash.reduce({}) { |scores, (location, team_data)|
-    scores[team_data[:team_name]] = team_data[:players].
+    scores[team_data[:team_name]] = team_data[:players].sum
     max_per_team[i] = team_data[:players].max { |a, b| a[statistic] <=> b[statistic] }
     i += 1
   }

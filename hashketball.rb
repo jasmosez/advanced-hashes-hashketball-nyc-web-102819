@@ -212,26 +212,43 @@ end
 
 def big_shoe_rebounds
   # return the number of rebounds associated with the player that has the largest shoe size.
+  
   player = {}
   max_shoe_per_team = []
   i = 0
   
   # Run expressions for Home and Away teams
-  game_hash.each do |location, team_data|
+  game_hash.each { |location, team_data|
     
     # collect hashes of players on each team with largest shoe
-    max_shoe_per_team[i] = team_data[:players].max { |a, b|
-      a[:shoe] <=> b[:shoe]
-    }
+    max_shoe_per_team[i] = team_data[:players].max { |a, b| a[:shoe] <=> b[:shoe] }
     i += 1
-  end
-  player = max_shoe_per_team.max { |a, b|
-      a[:shoe] <=> b[:shoe]
-    }
+  }
+  
+  player = max_shoe_per_team.max { |a, b| a[:shoe] <=> b[:shoe] }
   player[:rebounds]
 end
 
 ## BONUS SECTION
+
+def player_most(stat)
+  # return the number of rebounds associated with the player that has the largest shoe size.
+  
+  player = {}
+  max_shoe_per_team = []
+  i = 0
+  
+  # Run expressions for Home and Away teams
+  game_hash.each { |location, team_data|
+    
+    # collect hashes of players on each team with largest shoe
+    max_shoe_per_team[i] = team_data[:players].max { |a, b| a[:shoe] <=> b[:shoe] }
+    i += 1
+  }
+  
+  player = max_shoe_per_team.max { |a, b| a[:shoe] <=> b[:shoe] }
+  player[:rebounds]
+end
 
 def most_points_scored
 end

@@ -228,11 +228,11 @@ def player_most(stat)
   game_hash.each { |location, team_data|
     
     # collect hashes of players on each team with largest shoe
-    max_shoe_per_team[i] = team_data[:players].max { |a, b| a[stat] <=> b[stat] }
+    max_per_team[i] = team_data[:players].max { |a, b| a[stat] <=> b[stat] }
     i += 1
   }
   
-  player = max_shoe_per_team.max { |a, b| a[stat] <=> b[stat] }
+  player = max_per_team.max { |a, b| a[stat] <=> b[stat] }
 end
 
 def most_points_scored

@@ -236,7 +236,6 @@ def player_most(stat)
 end
 
 def most_points_scored
-  binding.pry
   player_most(:points)[:player_name]
 end
 
@@ -244,6 +243,7 @@ def winning_team
 end
 
 def player_with_longest_name
+  binding.pry
   player_most(:player_name.length)[:player_name]
 end
 

@@ -241,9 +241,20 @@ def winning_team
 end
 
 def player_with_longest_name
+   # return the the player that has the most of the statistic parameter.
   
+  player = {}
+  max_per_team = []
+  i = 0
   
-  player_most(:player_name)[:player_name]
+  # Run expressions for Home and Away teams
+  game_hash.each { |location, team_data|
+    # collect hashes of players on each team with largest shoe
+    max_per_team[i] = team_data[:players].max { |a, b| a[:player_name].length <=> b[:player_name].length }
+    i += 1
+  }
+  player = max_per_team.max { |a, b| a[:player_name].length <=> b[:player_name].length }
+  player[:player_name]
 end
 
 def long_name_steals_a_ton?

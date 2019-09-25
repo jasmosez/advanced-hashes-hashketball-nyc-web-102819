@@ -165,7 +165,6 @@ def find_player(name)
   player
 end
 
-
 def find_team(team_name)
   # Looks at game_hash. Each of the two teams (home and away)
   # Returns the hash for the team with that team name

@@ -174,7 +174,6 @@ def find_team(team_name)
   team_hash_as_array[1]
 end
 
-
 def player_most(statistic)
   # return the the player that has the most of the statistic parameter.
   

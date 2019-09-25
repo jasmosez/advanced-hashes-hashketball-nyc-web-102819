@@ -249,6 +249,7 @@ def winning_team
     scores
   }
   binding.pry
+  summary.max
 end
 
 def player_with_longest_name

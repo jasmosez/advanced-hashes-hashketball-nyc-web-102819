@@ -248,9 +248,7 @@ def winning_team
     }
     scores
   }
-  winners = summary.max { |a, b| a[statistic] <=> b[statistic] }
-  
-  winners[:team]
+  binding.pry
 end
 
 def player_with_longest_name

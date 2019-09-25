@@ -248,12 +248,8 @@ def winning_team
     })
     scores
   }
-  binding.pry
-  summary.reduce() { |item|
-    item.max { |a, b|
-      a[:score] <=> b[:score] 
-    }
-  }
+  winner = summary.max { |a, b| a[:score] <=> b[:score] }
+  winner[:team_name]
 end
 
 def player_with_longest_name

@@ -243,10 +243,10 @@ def winning_team
 
   # Run expressions for Home and Away teams
   summary = game_hash.reduce([]) { |scores, (location, team_data)|
-    scores = {
+    scores.push({
       :team_name => team_data[:team_name], 
       :score => team_data[:players].sum { |player| player[:points] }
-    }
+    })
     scores
   }
   binding.pry

@@ -175,6 +175,23 @@ def find_team(team_name)
 end
 
 
+def player_most(statistic)
+  # return the the player that has the most of the statistic parameter.
+  
+  player = {}
+  max_per_team = []
+  i = 0
+  
+  # Run expressions for Home and Away teams
+  game_hash.each { |location, team_data|
+    # collect hashes of players on each team with largest shoe
+    max_per_team[i] = team_data[:players].max { |a, b| a[statistic] <=> b[statistic] }
+    i += 1
+  }
+  player = max_per_team.max { |a, b| a[statistic] <=> b[statistic] }
+end
+
+
 ## METHODS THAT PRIMARILY CALL OTHER METHODS
 def num_points_scored(name)
   find_player(name)[:points]
@@ -227,22 +244,6 @@ end
 
 
 ## BONUS SECTION
-
-def player_most(statistic)
-  # return the the player that has the most of the statistic parameter.
-  
-  player = {}
-  max_per_team = []
-  i = 0
-  
-  # Run expressions for Home and Away teams
-  game_hash.each { |location, team_data|
-    # collect hashes of players on each team with largest shoe
-    max_per_team[i] = team_data[:players].max { |a, b| a[statistic] <=> b[statistic] }
-    i += 1
-  }
-  player = max_per_team.max { |a, b| a[statistic] <=> b[statistic] }
-end
 
 def most_points_scored
   player_most(:points)[:player_name]

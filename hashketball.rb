@@ -200,7 +200,10 @@ end
 def player_stats(name)
   # returns a hash of that player's stats
   stats_hash = find_player(name)
+  
+  # the tests don't want us to include the player name in the returned hash
   stats_hash.delete(:player_name)
+  
   stats_hash
 end
 

@@ -238,16 +238,15 @@ def most_points_scored
 end
 
 def winning_team
-  # new hash where team name => total points
-
-  # Run expressions for Home and Away teams
-  summary = game_hash.reduce([]) { |scores, (location, team_data)|
-    scores.push({
+  # create array of hashes with summary data: team name and total points
+  summary = game_hash.reduce([]) { |new_hash, (location, team_data)|
+    new_hash.push({
       :team_name => team_data[:team_name], 
       :score => team_data[:players].sum { |player| player[:points] }
     })
-    scores
+    new_hash
   }
+  
   winner = summary.max { |a, b| a[:score] <=> b[:score] }
   winner[:team_name]
 end

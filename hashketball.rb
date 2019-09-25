@@ -251,7 +251,7 @@ def winning_team
   binding.pry
   summary.reduce() { |item|
     item.max { |a, b|
-      a[:score]      
+      a[:score] <=> b[:score] 
     }
   }
 end

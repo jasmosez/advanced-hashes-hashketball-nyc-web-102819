@@ -239,7 +239,6 @@ end
 
 def winning_team
   # new hash where team name => total points
-  
 
   # Run expressions for Home and Away teams
   summary = game_hash.reduce([]) { |scores, (location, team_data)|
@@ -250,6 +249,9 @@ def winning_team
     scores
   }
   binding.pry
+  summary.reduce() { |item|
+    item.max 
+  }
 end
 
 def player_with_longest_name

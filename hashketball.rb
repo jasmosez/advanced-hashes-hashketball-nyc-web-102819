@@ -1,5 +1,8 @@
 require "pry"
 
+# MORE CLEANING IDEAS
+# 1. move game hash data into a yaml
+
 def game_hash
   big_hash = {
     :home => {

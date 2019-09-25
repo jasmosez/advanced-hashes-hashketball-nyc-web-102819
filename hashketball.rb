@@ -190,18 +190,6 @@ def team_colors(team_name)
   find_team(team_name)[:colors]
 end
 
-def team_names
-  # return an array of the team names
-  i = 0
-  return_array = []
-  
-  game_hash.each { |location, team_data| 
-    return_array[i] = team_data[:team_name] 
-    i += 1
-  }
-  return_array
-end
-
 def player_numbers(team_name)
   # returns an array of the jersey number's for that team.
   numbers = find_team(team_name)[:players].collect { |player|
@@ -220,6 +208,20 @@ def big_shoe_rebounds
   # return the number of rebounds associated with the player that has the largest shoe size.
   player_most(:shoe)[:rebounds]
 end
+
+## MISC NON BONUS
+def team_names
+  # return an array of the team names
+  i = 0
+  return_array = []
+  
+  game_hash.each { |location, team_data| 
+    return_array[i] = team_data[:team_name] 
+    i += 1
+  }
+  return_array
+end
+
 
 ## BONUS SECTION
 

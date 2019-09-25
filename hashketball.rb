@@ -146,6 +146,7 @@ def good_practices
   end
 end
 
+## METHDODS THAT DO THE REAL LABOR
 def find_player(name)
   # returns the hash of a player, given the name as a string
   player = {}
@@ -164,6 +165,8 @@ def find_player(name)
   player
 end
 
+
+## METHODS THAT PRIMARILY CALL OTHER METHODS
 def num_points_scored(name)
   find_player(name)[:points]
 end

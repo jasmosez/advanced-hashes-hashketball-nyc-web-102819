@@ -166,6 +166,16 @@ def find_player(name)
 end
 
 
+def find_team(team_name)
+  # Looks at game_hash. Each of the two teams (home and away)
+  # Returns the hash for the team with that team name
+  team_hash_as_array = game_hash.find { |key, value|
+    value[:team_name] == team_name
+  }
+  team_hash_as_array[1]
+end
+
+
 ## METHODS THAT PRIMARILY CALL OTHER METHODS
 def num_points_scored(name)
   find_player(name)[:points]
@@ -174,15 +184,6 @@ end
 def shoe_size(name)
   # returns the shoe size for that player
   find_player(name)[:shoe]
-end
-
-def find_team(team_name)
-  # Looks at game_hash. Each of the two teams (home and away)
-  # Returns the hash for the team with that team name
-  team_hash_as_array = game_hash.find { |key, value|
-    value[:team_name] == team_name
-  }
-  team_hash_as_array[1]
 end
 
 def team_colors(team_name)
